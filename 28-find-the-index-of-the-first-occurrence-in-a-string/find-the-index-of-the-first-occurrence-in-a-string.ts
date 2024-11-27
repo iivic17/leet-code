@@ -2,8 +2,8 @@ function strStr(haystack: string, needle: string): number {
     if (needle.length === 0) return 0
   
     const buildLPS = (pattern: string) => {
-      const lps: number[] = Array(pattern.length).fill(0)
-      let length = 0;
+      const lps = Array(pattern.length).fill(0)
+      let length = 0
       let i = 1
   
       while (i < pattern.length) {
@@ -21,7 +21,7 @@ function strStr(haystack: string, needle: string): number {
       return lps
     };
   
-    const lps = buildLPS(needle);
+    const lps = buildLPS(needle)
     let i = 0
     let j = 0
   
