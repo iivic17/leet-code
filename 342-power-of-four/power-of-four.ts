@@ -8,5 +8,5 @@
       if (sum === limit) return true
       sum *= 4
     }
-    return false;
+    return false
   }
