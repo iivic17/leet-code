@@ -31,50 +31,13 @@
       Z: 26,
     }
 
-    switch (columnTitle.length) {
-      case 1:
-        return colToValue[columnTitle]
-      case 2:
-        return 26 * colToValue[columnTitle[0]] + colToValue[columnTitle[1]]
-      case 3:
-        return (
-          Math.pow(26, 2) * colToValue[columnTitle[0]] +
-          26 * colToValue[columnTitle[1]] +
-          colToValue[columnTitle[2]]
-        )
-      case 4:
-        return (
-          Math.pow(26, 3) * colToValue[columnTitle[0]] +
-          Math.pow(26, 2) * colToValue[columnTitle[1]] +
-          26 * colToValue[columnTitle[2]] +
-          colToValue[columnTitle[3]]
-        )
-      case 5:
-        return (
-          Math.pow(26, 4) * colToValue[columnTitle[0]] +
-          Math.pow(26, 3) * colToValue[columnTitle[1]] +
-          Math.pow(26, 2) * colToValue[columnTitle[2]] +
-          26 * colToValue[columnTitle[3]] +
-          colToValue[columnTitle[4]]
-        )
-      case 6:
-        return (
-          Math.pow(26, 5) * colToValue[columnTitle[0]] +
-          Math.pow(26, 4) * colToValue[columnTitle[1]] +
-          Math.pow(26, 3) * colToValue[columnTitle[2]] +
-          Math.pow(26, 2) * colToValue[columnTitle[3]] +
-          26 * colToValue[columnTitle[4]] +
-          colToValue[columnTitle[5]]
-        )
-      case 7:
-        return (
-          Math.pow(26, 6) * colToValue[columnTitle[0]] +
-          Math.pow(26, 5) * colToValue[columnTitle[1]] +
-          Math.pow(26, 4) * colToValue[columnTitle[2]] +
-          Math.pow(26, 3) * colToValue[columnTitle[3]] +
-          Math.pow(26, 2) * colToValue[columnTitle[4]] +
-          26 * colToValue[columnTitle[5]] +
-          colToValue[columnTitle[6]]
-        )
+    let result = 0
+
+    for (let i = 0; i < columnTitle.length; i++) {
+      const charValue = colToValue[columnTitle[i]]
+      const power = columnTitle.length - 1 - i
+      result += charValue * Math.pow(26, power)
     }
+    
+    return result
   }
