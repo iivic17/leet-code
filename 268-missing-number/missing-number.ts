@@ -17,12 +17,5 @@ function missingNumber(nums: number[]) {
     }
 
     if (!hasZero) return 0
-
-    const result = lengthFactorial / perpetrator
-
-    if (result <= Number.MAX_SAFE_INTEGER) {
-        return Number(result)
-    } else {
-        throw new Error("Result exceeds safe integer range.")
-    }
+    return Number(lengthFactorial / perpetrator)
 }
